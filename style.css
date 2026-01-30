@@ -37,7 +37,7 @@ body {
   text-decoration: none;
 }
 
-/* HERO - MOBILE FIRST */
+/* HERO - MOBil */
 .hero {
   display: flex;
   flex-direction: column; /* Mobilde resim üstte, yazı altta */
@@ -96,6 +96,7 @@ body {
   }
 }
 
+
 /* laptop */
 @media (min-width: 1024px) {
 
@@ -109,7 +110,6 @@ body {
   list-style: none;
   padding: 20px;
 }
-
 .pricing li {
   background-color: white;
   padding: 20px;
