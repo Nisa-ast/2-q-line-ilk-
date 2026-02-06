@@ -3,13 +3,13 @@ body{
   margin:0;
   font-family: Arial, sans-serif;
   background-color: #f4f6f7;
-  color:blueviolet;
+  color:#050a2a;
 }
   
 /*NAVBAR KISMI*/
 .navbar{
   display:flex;
-  background-color:#911c31;
+  background-color:#103d1e;
   justify-content:space-between;
   align-items:center;
   padding:20px;
@@ -46,7 +46,8 @@ body{
   display: flex;
   gap: 30px;              /* Kartlar arası boşluk */
   justify-content: center;
-  flex-wrap: wrap;        /* Küçük ekranda alta atsın */
+  flex-wrap: wrap;   
+  align-items:flex-start;     /* Küçük ekranda alta atsın */
 }
 
 /* KART GENEL */
@@ -92,6 +93,7 @@ body{
   transition: max-height 0.5s ease, padding 0.3s ease;
 }
 
+
 /* KART ALT LİSTE */
 .kartdetaylari ul {
   padding-left: 18px;
@@ -104,8 +106,16 @@ body{
 }
 
 /* TIKLAYINCA AÇILMA OLAYI */
-.team-card:active .kartdetaylari {
-  max-height: 300px;           /* İçerik sığacak kadar */
+details .kartdetaylari {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+/* details açıkken */
+details[open] .kartdetaylari {
+  max-height: 300px;
   padding: 20px;
 }
 
@@ -128,14 +138,29 @@ body{
 }
 
 .lead-card .sertifika {
+  width: 100%;
+  max-width: 160px;        /*SERTİFİKA BOYUTU */
+  display: block;
+  margin: 15px auto 0;    /* Ortala */
   opacity: 0;
   transform: scale(0.8);
   transition: all 0.4s ease;
-  /* Sertifika başlangıçta gizli */
 }
 
 .lead-card:hover .sertifika {
   opacity: 1;
   transform: scale(1);
   /* Hover ile sertifika görünür */
+}
+
+.team-container > details.team-card {
+  display: block;          /* details varsayılanını sabitler */
+}
+
+details > summary {
+  list-style: none;
+}
+.team-container > details.team-card {
+  width: 260px;   /* kart genişliği sabit */
+  flex-shrink: 0;
 }
