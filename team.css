@@ -1,0 +1,141 @@
+/*GENEL SAYFANIN AYARLARI*/
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f7;
+  color:blueviolet;
+}
+  
+/*NAVBAR KISMI*/
+.navbar{
+  display:flex;
+  background-color:#911c31;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+}
+
+.logo{
+  color:white;
+  font-weight:bold;
+  font-size:20px;
+}
+
+.nav-links a{
+  color: white;
+  text-decoration:none;
+}
+
+/*TAKIM TANIMI*/
+.takim-tanimi{
+  text-align:center;
+  padding:40px 20px;
+}
+.takim-tanimi p{
+  max-width:800px;
+  margin:20px auto 0;
+  line-height: 1.6;
+}
+
+/*TAKIM ARKASI*/
+.team-section{
+  padding:40px 20px;
+}
+/* FLEXBOX: KARTLARI YAN YANA DİZER */
+.team-container {
+  display: flex;
+  gap: 30px;              /* Kartlar arası boşluk */
+  justify-content: center;
+  flex-wrap: wrap;        /* Küçük ekranda alta atsın */
+}
+
+/* KART GENEL */
+.team-card {
+  width: 260px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover gölge */
+.team-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* KART ÜST KISMI */
+.card-baslik {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-baslik img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card-baslik h3 {
+  margin: 10px 0 5px;
+}
+
+.summary {
+  font-size: 14px;
+  color: #555;
+}
+
+/* KART ALT KISMI (KAPALI HAL) */
+.kartdetaylari {
+  max-height: 0;               /* Başlangıçta kapalı */
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+/* KART ALT LİSTE */
+.kartdetaylari ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.kartdetaylari li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* TIKLAYINCA AÇILMA OLAYI */
+.team-card:active .kartdetaylari {
+  max-height: 300px;           /* İçerik sığacak kadar */
+  padding: 20px;
+}
+
+/* LEAD CARD VURGUSU */
+.lead-card {
+  border: 2px solid #911c31;
+}
+
+.team-card {
+  transition: transform 0.3s ease;
+  /* Kartlara Animasyon*/
+
+}
+  
+
+
+.team-card:hover {
+  transform: scale(1.05);
+  /* Mouse gelince kartı büyütür */
+}
+
+.lead-card .sertifika {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+  /* Sertifika başlangıçta gizli */
+}
+
+.lead-card:hover .sertifika {
+  opacity: 1;
+  transform: scale(1);
+  /* Hover ile sertifika görünür */
+}
